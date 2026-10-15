@@ -1,0 +1,23 @@
+{
+  "name": "playwright-mastery-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlington-palmer/playwright-mastery-new.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/carlington-palmer/playwright-mastery-new/issues"
+  },
+  "homepage": "https://github.com/carlington-palmer/playwright-mastery-new#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5"
+  }
+}
