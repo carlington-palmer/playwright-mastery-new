@@ -1,0 +1,17 @@
+{
+  "name": "taskly-practice-app",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Practice target app for Playwright training. Test it, don't read it.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "reset-db": "node --disable-warning=ExperimentalWarning -e \"require('./db').reset(); console.log('Database reset')\""
+  },
+  "engines": { "node": ">=22.13" },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "multer": "^2.0.2"
+  }
+}
