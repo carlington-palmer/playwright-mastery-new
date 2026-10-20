@@ -14,3 +14,8 @@ export const lockedUser: User = {
     password: 'Password123!',
     errorMessage: 'This account has been locked. Contact support.'
 }
+
+export const adminUser = {
+    username: 'admin_user',
+    password: 'Admin123!'
+}
