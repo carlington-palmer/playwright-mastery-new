@@ -68,6 +68,18 @@ test.describe('Tasks Page', ()=>{
         
     })
 
+    test('add a task and check toast to be visible and then disappear', async ({page})=>{
+        await page.getByRole('link', {name: 'New task'}).click()
+        await page.getByLabel('Title', {exact: true}).fill('Toast check')
+        await page.getByRole('button', {name: 'Create task'}).click()
+        
+        const toast = page.getByRole('status').filter({hasText: 'Task created'})
+        await expect(toast).toBeVisible()
+        await expect(toast).toHaveText('Task created')
+        await expect(toast).toBeHidden()
+
+        await expect(page.getByRole('row', {name: 'Toast check'})).toBeVisible()
+    })
    
 })
 
