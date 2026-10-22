@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "playwright test --project=chromium"
+    "test:chrome": "playwright test --project=chromium",
+    "test:smoke": "playwright test --project=chromium smoke" 
   },
   "repository": {
     "type": "git",
