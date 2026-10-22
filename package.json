@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:chrome": "playwright test --project=chromium"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carlington-palmer/playwright-mastery-new.git"
