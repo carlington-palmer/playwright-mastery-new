@@ -12,3 +12,11 @@
 ## Block 3 Locators - Proven 2026-10-20
 ### Locators: are ways to find elements on a page
 ### strict mode: playwright uses a rule call strict mode for when multiple elements are the same if doesn't assume it throws an error. The dev would then have to narrow down the element they want to find. e.g filter, scoping the container or use {exact: true}
+
+
+# About the app Taskly
+## its a project that was created for the purpose of sharping my automation skills
+## To run it, from root dir 
+`cd app`
+`npm start`
+## thats it
