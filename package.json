@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "playwright test --project=chromium"
+    "test:chrome": "playwright test --project=chromium",
+    "start:app": "cd app/ && npm start"
   },
   "repository": {
     "type": "git",
