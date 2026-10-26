@@ -1,5 +1,5 @@
 import {Page, Locator} from '@playwright/test'
-import { User } from '../../utils/users';
+import { User } from '../utils/users';
 
 
 export class LoginPage{
@@ -8,7 +8,7 @@ export class LoginPage{
     readonly username: Locator;
     readonly password: Locator;
     readonly loginButton: Locator;
-    readonly errorMessage: Locator;
+    readonly errorAlert: Locator;
 
 
     constructor(page: Page){
@@ -16,10 +16,10 @@ export class LoginPage{
         this.username = page.getByLabel('Username')
         this.password = page.getByLabel('Password')
         this.loginButton = page.getByRole('button', {name: 'Log in'})
-        this.errorMessage = page.getByRole('alert')
+        this.errorAlert = page.getByRole('alert')
     }
 
-    async goto(url: string = '/'){
+    async goto(){
         await this.page.goto('http://localhost:3000/login')
     }
 

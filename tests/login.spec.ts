@@ -1,7 +1,6 @@
 import {test, expect} from '@playwright/test'
 import { standardUser, lockedUser } from '../utils/users'
-import { login } from '../utils/auth'
-import { LoginPage } from './pages/loginPage'
+import { LoginPage } from '../pages/LoginPage'
 
 
 
@@ -21,6 +20,6 @@ test.describe('Log in page',()=>{
         await loginPage.login(lockedUser)
 
         if(!lockedUser.errorMessage) throw new Error('This field is required')
-        await expect(loginPage.errorMessage).toHaveText(lockedUser.errorMessage)
+        await expect(loginPage.errorAlert).toHaveText(lockedUser.errorMessage)
     })
 })
