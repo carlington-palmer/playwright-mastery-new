@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/carlington-palmer/playwright-mastery-new#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
     "@playwright/test": "^1.64.1",
-    "@types/node": "^26.6.5"
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15"
   }
 }
