@@ -1,13 +1,19 @@
 import {expect, test} from "@playwright/test"
 import { login } from "../utils/auth"
 import { standardUser } from "../utils/users"
+import { TaskPage } from "../pages/TasksPage"
 
 
 test.describe('Tasks Page', ()=>{
+
+    let taskPage: TaskPage
     test.beforeEach(async ({page})=>{
         await login(page, standardUser)
         await expect(page).toHaveURL(/dashboard/)
         await page.goto('http://localhost:3000/tasks')
+
+        taskPage = new TaskPage(page)
+        await taskPage.goto()
 
     })
     test('checking task heading is visible', async ({page})=>{
@@ -25,8 +31,8 @@ test.describe('Tasks Page', ()=>{
     })
 
     test('test "Add storageState setup" is "in progress"', async({page})=>{
-        const row = page.getByRole('row', {name: 'Add storageState setup'})
-        await expect(row).toContainText('In progress')
+
+        await expect(taskPage.forRow('Add storageState setup')).toContainText('In progress')
     })
     test('test clicking "Add storageState setup" edit button opens a form with said title', async({page})=>{
         const row = page.getByRole('row', {name: 'Add storageState setup'})
@@ -39,13 +45,12 @@ test.describe('Tasks Page', ()=>{
     })
 
     test('test in-progress tasks', async({page})=>{
-        await page.getByLabel('Status').selectOption('in_progress')
+        await taskPage.filterByStatus('in_progress')
 
-        const tableRow = page.getByTestId('task-row')
-        await expect(tableRow).toHaveCount(3)
+        await expect(taskPage.tableRow).toHaveCount(3)
 
-        await expect(tableRow.filter({hasText: 'Urgent'})).toHaveCount(2)
-        await expect(tableRow.filter({hasNotText: 'Urgent'})).toContainText('Add storageState setup')
+        await expect(taskPage.tableRow.filter({hasText: 'Urgent'})).toHaveCount(2)
+        await expect(taskPage.tableRow.filter({hasNotText: 'Urgent'})).toContainText('Add storageState setup')
     })
 
     test('test adding a task', async ({page})=>{
