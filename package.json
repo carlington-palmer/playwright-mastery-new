@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:chrome": "playwright test --project=chromium",
-    "start:app": "cd app/ && npm start"
+    "start:app": "cd app/ && npm start",
+    "bdd": "cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
   },
   "homepage": "https://github.com/carlington-palmer/playwright-mastery-new#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
     "@playwright/test": "^1.64.1",
-    "@types/node": "^26.6.5"
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15"
   }
 }
