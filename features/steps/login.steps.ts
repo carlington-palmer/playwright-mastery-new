@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { CustomWorld } from '../support/world';
-import { LoginPage } from '../../';
+import { LoginPage } from '../../pages/LoginPage';
 import { standardUser } from '../../utils/users';
 
 Given('I am on the login page', async function (this: CustomWorld) {
