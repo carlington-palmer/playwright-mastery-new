@@ -1,6 +1,7 @@
 import { BeforeAll, AfterAll, Before, After, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium, Browser } from '@playwright/test';
 import { CustomWorld } from './world';
+import "dotenv/config"
 
 setDefaultTimeout(30 * 1000);
 let browser: Browser;

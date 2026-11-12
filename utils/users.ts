@@ -1,3 +1,5 @@
+import { requireEnv } from "./env";
+
 export type User = {
     username: string;
     password: string;
@@ -5,17 +7,17 @@ export type User = {
 }
 
 export const standardUser: User = {
-    username: 'standard_user',
-    password: 'Password123!'
+    username: requireEnv('STANDARD_USERNAME'),
+    password: requireEnv('STANDARD_PASSWORD')
 }
 
 export const lockedUser: User = {
-    username: 'locked_user',
-    password: 'Password123!',
+    username: requireEnv('LOCKED_USERNAME'),
+    password: requireEnv('LOCKED_PASSWORD'),
     errorMessage: 'This account has been locked. Contact support.'
 }
 
 export const adminUser = {
-    username: 'admin_user',
-    password: 'Admin123!'
+    username: requireEnv('ADMIN_USERNAME'),
+    password: requireEnv('ADMIN_PASSWORD')
 }
